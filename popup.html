@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WhatsApp Bulk Messenger</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 10px;
+      }
+      textarea,
+      input,
+      button {
+        width: 100%;
+        margin: 5px 0;
+        padding: 10px;
+      }
+      button {
+        background-color: #25d366;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #1da354;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Send Bulk WhatsApp Messages</h3>
+    <textarea
+      id="numbers"
+      placeholder="Enter mobile numbers, comma-separated"
+    ></textarea>
+    <textarea id="message" placeholder="Enter your message"></textarea>
+    <button id="sendBtn">Send Messages</button>
+    <script src="popup.js"></script>
+  </body>
+</html>
