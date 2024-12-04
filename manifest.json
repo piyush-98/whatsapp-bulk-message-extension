@@ -4,30 +4,37 @@
   "version": "1.1",
   "description": "Send bulk messages via WhatsApp Web.",
   "permissions": ["tabs", "activeTab", "scripting"],
-  "host_permissions": ["https://web.whatsapp.com/*"],
+  "host_permissions": ["<all_urls>"],
   "icons": {
     "48": "icon.png"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "log": true,
+    "type": "module"
   },
   "action": {
     "default_popup": "popup.html",
     "default_icon": "icon.png"
   },
   "externally_connectable": {
-    "matches": ["http://localhost/*"]
+    "matches": ["<all_urls>"]
   },
   "content_scripts": [
     {
       "matches": ["https://web.whatsapp.com/*"],
+      "all_frames": false,
       "js": ["content.js"],
       "run_at": "document_idle"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["libs/createUi.js", "libs/wppconnect-wa.js"],
+      "resources": [
+        "libs/createUi.js",
+        "libs/wppconnect-wa.js",
+        "libs/assets/injected-zCWQQICs.css"
+      ],
       "matches": ["https://web.whatsapp.com/*"]
     }
   ]
